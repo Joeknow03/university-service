@@ -35,11 +35,11 @@ def test_update_reader_age(reader: ReaderIn = reader):
 
 
 def test_update_reader_city(reader: ReaderIn = reader):
-    reader_upd = ReaderIn(
-        name='Pavel Durov',
-        phone='+791234567',
-        city='Moscow',
-        age=20,
+    reader_upd = ReaderOut(
+        name= reader.name,
+        phone=reader.phone,
+        city=reader.city,
+        age=reader.age,
         id=1
     )
     assert dict(reader_upd) == {'name': reader.name,
