@@ -1,50 +1,49 @@
 import pytest
-from app.api.models import ReaderIn, ReaderOut
+from app.api.models import UniversityIn, UniversityOut
 
-
-reader = ReaderIn(
-    name='Pavel Durov',
+universities = UniversityIn(
+    name='Mirea',
     phone='+791234567',
     city='Moscow',
-    age= 20
+    count_students=20000
 )
 
 
-def test_create_reader(reader: ReaderIn = reader):
-    assert dict(reader) == {'name': reader.name,
-                              'phone': reader.phone,
-                              'city': reader.city,
-                              'age': reader.age
-                              }
+def test_create_reader(universities: UniversityIn = universities):
+    assert dict(universities) == {'name': universities.name,
+                                  'phone': universities.phone,
+                                  'city': universities.city,
+                                  'count_students': universities.count_students
+                                  }
 
 
-def test_update_reader_age(reader: ReaderIn = reader):
-    reader_upd = ReaderOut(
-        name='Pavel Durov',
+def test_update_reader_age(universities: UniversityIn = universities):
+    university_upd = UniversityOut(
+        name='Mirea',
         phone='+791234567',
         city='Moscow',
-        age=20,
+        count_students=20000,
         id=1
     )
-    assert dict(reader_upd) == {'name': reader.name,
-                              'phone': reader.phone,
-                              'city': reader.city,
-                              'age': reader.age,
-                              'id': reader_upd.id
-                              }
+    assert dict(university_upd) == {'name': universities.name,
+                                'phone': universities.phone,
+                                'city': universities.city,
+                                'age': universities.age,
+                                'count_students': universities.count_students
+                                }
 
 
-def test_update_reader_city(reader: ReaderIn = reader):
-    reader_upd = ReaderOut(
-        name= reader.name,
-        phone=reader.phone,
-        city=reader.city,
-        age=reader.age,
+def test_update_reader_city(universities: UniversityIn = universities):
+    university_upd = UniversityIn(
+        name=universities.name,
+        phone=universities.phone,
+        city=universities.city,
+        count_students=universities.count_students,
         id=1
     )
-    assert dict(reader_upd) == {'name': reader.name,
-                              'phone': reader.phone,
-                              'city': reader.city,
-                              'age': reader.age,
-                              'id': reader_upd.id
-                              }
+    assert dict(university_upd) == {'name': universities.name,
+                                'phone': universities.phone,
+                                'city': universities.city,
+                                'count_students': universities.count_students,
+                                'id': university_upd.id
+                                }
