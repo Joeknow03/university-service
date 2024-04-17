@@ -34,7 +34,7 @@ def test_update_reader_age(universities: UniversityIn = universities):
 
 
 def test_update_reader_city(universities: UniversityIn = universities):
-    university_upd = UniversityIn(
+    university_upd = UniversityOut(
         name=universities.name,
         phone=universities.phone,
         city=universities.city,
