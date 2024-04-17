@@ -28,8 +28,8 @@ def test_update_reader_age(universities: UniversityIn = universities):
     assert dict(university_upd) == {'name': universities.name,
                                 'phone': universities.phone,
                                 'city': universities.city,
-                                'age': universities.age,
-                                'count_students': universities.count_students
+                                'count_students': universities.count_students,
+                                'id': university_upd.id
                                 }
 
 
